@@ -30,10 +30,6 @@ void pwm1_isr0(int pwm_id, void *data)
 	/* if PLIC gateways stop to forward request once any
 	 * request is forwarded and start again when the interrupt
 	 * completion process finishes, this should never be reached
-	 *
-	 * (due to the timing(pwm1 is start before the corresponding
-	 * intr sources in PLIC are enabled), this in fact may be 
-	 * called once if the above conditions hold)
 	 */	
 	printf("reach here?\r\n");
 }
