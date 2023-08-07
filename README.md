@@ -1,6 +1,6 @@
 # sifive-hifive1-revb-interrupt-demo
-to demonstrate some interrupt related behaviors. 
- 
+These demos use newlib C and Freedom Metal library: https://github.com/sifive/freedom-metal/tree/master  
+  
 pwm-interrupt.c  
   pwm interrupt through PLIC once/second  
   
