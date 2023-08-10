@@ -9,3 +9,6 @@ nested-external-interrupt.c
   
 software-and-external-interrupt.c  
   in first pwm intr taken, pend self a software intr  
+  
+nested-plic-interrupt.c  
+  make nested interrupts come from different sources to PLIC  

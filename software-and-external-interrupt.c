@@ -26,7 +26,7 @@ void my_plic0_handler(int id, void *priv)
 
 	unsigned i = 8;
 	printf("enable mstatus.MIE again\r\n");
-	__asm__ volatile("csrs mstatus, %0" : "=r"(i));
+	__asm__ volatile("csrs mstatus, %0" :: "r"(i));
 	
 	printf("pend self a software intr\r\n");
 	volatile unsigned *clint_msip = (unsigned *)0x2000000U;
@@ -53,9 +53,9 @@ int main(void)
 	int pwm1_id0, rc;
 	
 	int i = 0;
-	__asm__ volatile("csrw mcycle, %0" : "=r"(i));
+	__asm__ volatile("csrw mcycle, %0" :: "r"(i));
 	i = 8;
-	__asm__ volatile("csrc mip, %0" : "=r"(i));
+	__asm__ volatile("csrc mip, %0" :: "r"(i));
 
 	cpu = metal_cpu_get(metal_cpu_get_current_hartid());
 	if (cpu == NULL)

@@ -27,7 +27,7 @@ void my_plic0_handler(int id, void *priv)
 		printf("rc!=0\r\n");
 
 	unsigned i = 8;
-	__asm__ volatile("csrs mstatus, %0" : "=r"(i));
+	__asm__ volatile("csrs mstatus, %0" :: "r"(i));
 	/* after execute a few instructions turns to handle nested intr.
 	 * this will not be printed out for a long time.
 	 * only when debugging do i see it come out.
@@ -61,7 +61,7 @@ int main(void)
 	int pwm1_id0, rc;
 	
 	int i = 0;
-	__asm__ volatile("csrw mcycle, %0" : "=r"(i));
+	__asm__ volatile("csrw mcycle, %0" :: "r"(i));
 
 	cpu = metal_cpu_get(metal_cpu_get_current_hartid());
 	if (cpu == NULL)

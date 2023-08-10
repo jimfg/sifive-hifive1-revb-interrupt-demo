@@ -36,7 +36,7 @@ int main(void)
 	int pwm1_id0, rc;
 	
 	int i = 0;
-	__asm__ volatile("csrw mcycle, %0" : "=r"(i));
+	__asm__ volatile("csrw mcycle, %0" :: "r"(i));
 
 	/* initialize cpu interrupt controller */
 	cpu = metal_cpu_get(metal_cpu_get_current_hartid());
