@@ -9,6 +9,9 @@ nested-external-interrupt.c
   
 software-and-external-interrupt.c  
   in first pwm intr taken, pend self a software intr  
+    
+plic-gateway-request-1.c  
+  written due to misunderstanding of PLIC spec, just keep it
   
 nested-plic-interrupt.c  
   make nested interrupts come from different sources to PLIC  
