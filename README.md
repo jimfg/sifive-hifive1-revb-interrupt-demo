@@ -15,3 +15,6 @@ plic-gateway-request-1.c
   
 nested-plic-interrupt.c  
   make nested interrupts come from different sources to PLIC  
+  
+intr-code-mcycle.c  
+  estimate number of machine cycles spent with intr/non-intr code  
